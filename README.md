@@ -48,38 +48,7 @@ A supportive AI chatbot designed specifically for students, featuring sentiment 
    - Provide empathetic responses
    - Offer personalized relaxation tips
    - Update the mood indicator in real-time
-
-## API Endpoints
-
-### POST `/api/chat`
-Send a message to the chatbot.
-
-**Request:**
-```json
-{
-  "message": "I'm feeling stressed about my exams"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "response": "I understand you're going through a tough time...",
-  "tip": "Take a deep breath. Inhale for 4 counts...",
-  "additionalTips": ["...", "..."],
-  "mood": "negative",
-  "sentimentScore": -2,
-  "type": "normal"
-}
-```
-
-### POST `/api/mood-history`
-Save mood data to history.
-
-### GET `/api/mood-history`
-Retrieve mood history.
-
+     
 ## Mood Categories
 
 - **Very Negative** (score ≤ -3): Crisis support and immediate resources
@@ -93,10 +62,7 @@ Retrieve mood history.
 ⚠️ **This chatbot is a supportive tool and NOT a replacement for professional mental health care.**
 
 If you're experiencing a mental health crisis:
-- Contact emergency services: 911
-- National Suicide Prevention Lifeline: 988
-- Crisis Text Line: Text HOME to 741741
-- Reach out to your campus counseling center
+- Contact emergency services
 
 ## Project Structure
 
@@ -111,18 +77,4 @@ mental-health-chatbot/
 └── README.md          # This file
 ```
 
-## Development
 
-To modify the chatbot:
-- Edit `server.js` to change backend logic or add new tips
-- Edit `public/styles.css` to customize the UI
-- Edit `public/script.js` to modify frontend behavior
-- Edit `public/index.html` to change the HTML structure
-
-## License
-
-MIT
-
-## Contributing
-
-Feel free to submit issues or pull requests to improve this project!

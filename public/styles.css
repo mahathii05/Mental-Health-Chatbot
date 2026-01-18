@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    max-height: 900px;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1em;
+    opacity: 0.9;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 10px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.bot-message {
+    justify-content: flex-start;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 15px 20px;
+    border-radius: 18px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.user-message .message-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.bot-message .message-content {
+    background: white;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-content p {
+    margin: 0;
+}
+
+.tip-box {
+    margin-top: 10px;
+    padding: 12px;
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 8px;
+}
+
+.tip-box strong {
+    color: #856404;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.tip-box p {
+    color: #856404;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.additional-tips {
+    margin-top: 10px;
+    padding: 10px;
+    background: #e7f3ff;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+}
+
+.additional-tips strong {
+    color: #0d47a1;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.additional-tips ul {
+    margin: 5px 0 0 20px;
+    color: #0d47a1;
+    font-size: 0.85em;
+}
+
+.crisis-message {
+    background: #ffebee !important;
+    border-left: 4px solid #f44336 !important;
+}
+
+.crisis-message strong {
+    color: #c62828;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.crisis-message ul {
+    margin: 10px 0 0 20px;
+    color: #c62828;
+}
+
+.mood-indicator {
+    padding: 15px 20px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mood-label {
+    font-size: 0.9em;
+    color: #666;
+    margin-right: 10px;
+}
+
+.mood-value {
+    font-weight: 600;
+    font-size: 1em;
+    color: #333;
+}
+
+.mood-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.mood-fill {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(90deg, #4caf50, #8bc34a);
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+.mood-fill.very-negative {
+    background: linear-gradient(90deg, #f44336, #e91e63);
+    width: 10%;
+}
+
+.mood-fill.negative {
+    background: linear-gradient(90deg, #ff9800, #ff5722);
+    width: 30%;
+}
+
+.mood-fill.neutral {
+    background: linear-gradient(90deg, #ffc107, #ff9800);
+    width: 50%;
+}
+
+.mood-fill.positive {
+    background: linear-gradient(90deg, #8bc34a, #4caf50);
+    width: 70%;
+}
+
+.mood-fill.very-positive {
+    background: linear-gradient(90deg, #4caf50, #2e7d32);
+    width: 90%;
+}
+
+.input-container {
+    display: flex;
+    padding: 20px;
+    background: white;
+    gap: 10px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#userInput:focus {
+    border-color: #667eea;
+}
+
+#sendButton {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#sendButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+#sendButton:active {
+    transform: translateY(0);
+}
+
+.quick-tips {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.tips-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.tips-content {
+    font-size: 0.85em;
+    color: #666;
+    line-height: 1.6;
+}
+
+footer {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    text-align: center;
+    font-size: 0.85em;
+    color: #666;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.disclaimer {
+    font-style: italic;
+    color: #999;
+}
+
+/* Scrollbar styling */
+.chat-messages::-webkit-scrollbar,
+.quick-tips::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track,
+.quick-tips::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chat-messages::-webkit-scrollbar-thumb,
+.quick-tips::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover,
+.quick-tips::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .message-content {
+        max-width: 85%;
+    }
+
+    .input-container {
+        padding: 15px;
+    }
+}

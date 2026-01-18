@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mental Health Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💚 Student Mental Health Support</h1>
+            <p class="subtitle">Your AI companion for emotional wellness</p>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Hello! I'm here to support you. How are you feeling today? You can share anything that's on your mind - I'm here to listen and help. 😊</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mood-indicator" id="moodIndicator">
+                <span class="mood-label">Current Mood:</span>
+                <span class="mood-value" id="moodValue">Neutral</span>
+                <div class="mood-bar">
+                    <div class="mood-fill" id="moodFill"></div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Type your message here..." 
+                    autocomplete="off"
+                >
+                <button id="sendButton">Send</button>
+            </div>
+
+            <div class="quick-tips" id="quickTips">
+                <p class="tips-title">💡 Quick Tips:</p>
+                <div class="tips-content" id="tipsContent"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>⚠️ If you're in immediate crisis, please contact emergency services or a crisis hotline.</p>
+            <p class="disclaimer">This chatbot is a supportive tool and not a replacement for professional mental health care.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

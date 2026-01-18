@@ -1,4 +1,4 @@
-# Student Mental Health Chatbot
+#MindEase : Student Mental Health Chatbot
 
 A supportive AI chatbot designed specifically for students, featuring sentiment analysis, mood detection, and personalized relaxation tips.
 
